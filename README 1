@@ -1,0 +1,85 @@
+# Online-Voting-System
+
+This Java program implements a online voting system where voters can cast their votes for candidates, and the system tracks the votes and displays election results. Here’s a breakdown of the code:
+
+Classes and Their Roles
+1. Candidate Class
+This class represents a candidate in the election.
+
+Attributes:
+name: The candidate's name.
+votes: The number of votes the candidate has received.
+Methods:
+getName(): Returns the candidate's name.
+addVote(): Increments the candidate's vote count.
+getVotes(): Returns the candidate's total votes.
+2. VotingSystem Class
+This class manages the voting process.
+
+Attributes:
+candidates: A list of Candidate objects, representing all the candidates in the election.
+voters: A map (HashMap) to keep track of voters who have already voted, using their voter ID.
+Methods:
+addCandidate(String name): Adds a new candidate to the list.
+vote(String voterId, String candidateName): Allows a voter to cast a vote for a candidate.
+Checks if the voter has already voted.
+Checks if the candidate exists in the list.
+If valid, increments the candidate's vote count and marks the voter as having voted.
+displayResults(): Displays the names of all candidates along with their total votes.
+3. OnlineVotingApp Class
+This is the main class that handles user interaction through a console-based menu.
+
+Key Features:
+Adds predefined candidates to the system.
+Allows voters to cast votes.
+Displays election results.
+Provides a simple menu for users to interact with the system.
+How the Code Works
+1. Initialization
+An instance of the VotingSystem is created.
+Three candidates (Alice, Bob, and Charlie) are added to the system using the addCandidate method.
+2. Menu Options
+The program displays a menu with three options:
+
+Cast Vote:
+Prompts the user to enter their voter ID and the name of the candidate they wish to vote for.
+The vote method in the VotingSystem class:
+Checks if the voter ID is already in the voters map.
+If the voter has not voted, it checks if the candidate exists and increments the candidate's votes.
+If the candidate does not exist, it informs the voter that the candidate was not found.
+Display Results:
+Calls the displayResults method to show each candidate's name and their total votes.
+Exit:
+Terminates the program.
+3. Voting Process
+Each voter is uniquely identified by their voter ID.
+The voters map ensures that no voter can vote more than once.
+
+Key Features of the Code
+Voter Tracking:
+The voters map ensures that each voter can vote only once.
+Candidate Management:
+The candidates list holds all the candidates, and each candidate has a unique vote count.
+Dynamic Voting:
+The program allows users to vote for candidates by their names (case-insensitive matching).
+Result Transparency:
+The displayResults method displays the election results at any time.
+
+Improvements to Consider
+Dynamic Candidate Addition:
+Allow users to add candidates dynamically instead of hardcoding them.
+Persistent Data:
+Save candidates, votes, and voter data to a file or database for persistence.
+Input Validation:
+Add stricter checks for input format and invalid data.
+GUI Integration:
+Build a graphical user interface using JavaFX or Swing for better user experience.
+Timer:
+Add a time window for voting to simulate real-world election systems.
+This program is a simple yet effective implementation of an online voting system, showcasing the core functionalities like voter validation, candidate tracking, and result display.
+
+
+
+
+
+
